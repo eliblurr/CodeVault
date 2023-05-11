@@ -5,8 +5,7 @@
 
 > <img src="static/images/loader.gif" width="10" height="10"/> indicates not started
 
-see the following sections
-
+## See the following sections
 
 - [Algorithm Solutions](./Algorithmic%20Solutions/) &#10004; &#10002;
     - [Binary Tree Zigzag Level Order Traversal](./Algorithmic%20Solutions/BinaryTreeZigzagLevelOrderTraversal/) &#10002;
