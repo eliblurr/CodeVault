@@ -18,4 +18,4 @@ see the following sections
 - [TypeScript](./TypeScript/) <img src="images/loader.gif" width="10" height="10"/>
 - [Angular](angular/) <img src="images/loader.gif" width="10" height="10"/>
 - [ReactJs](./ReactJs/) <img src="images/loader.gif" width="10" height="10"/>
-- [C++](c++/) <img src="images/loader.gif" width="10" height="10"/>
+- [C++](C++/) <img src="images/loader.gif" width="10" height="10"/>
