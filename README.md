@@ -7,7 +7,7 @@
 
 ## See the following sections
 
-- [Algorithm Solutions](./Algorithmic%20Solutions/) &#10004; &#10002;
+- [Algorithm Solutions](./Algorithmic%20Solutions/) &#10002;
     - [Binary Tree Zigzag Level Order Traversal](./Algorithmic%20Solutions/BinaryTreeZigzagLevelOrderTraversal/) &#10002;
 - [Design Patterns](./Design%20Patterns/) &#10002;
     - [Proxy Design Pattern](./Design%20Patterns/Proxy%20Design%20Pattern/) &#10004;
