@@ -1,63 +1,53 @@
 package org.example.queue;
 
-public class CustomQueue implements Queue {
-    private int arr[];
-    int front, rear, size;
+public class CustomQueue<T> implements Queue<T> {
+    private T arr[];
+    private int front, rear, size, count;
 
     public CustomQueue(int size) {
-        arr = new int[size];
+        arr = (T[]) new Object[size];;
         this.size = size;
         front = -1;
         rear = -1;
+        count = 0;
     }
 
-    public boolean isFull() {
-        if(front == 0 && rear==size-1){
-            return true;
-        }
-        return false;
+    public Boolean isFull() {
+        return front == 0 && rear==size-1;
     }
 
-    public boolean isEmpty() {
-        if (front == -1){
-            return true;
-        }
-        return false;
+    public Boolean isEmpty() {
+        return front == -1;
     }
 
-    public int peek(){
-        if(isEmpty()){
-            System.exit(1);
-        }
+    public T peek(){
+        if(isEmpty()) throw new ArrayIndexOutOfBoundsException("Failed to peek! Queue is empty");
         return arr[front];
     }
 
-    public void enQueue(int data){
-        if(isFull()){
-            System.out.println("Enqueue exit "+data);
-            System.exit(1);
-        } else {
-            if (front == -1)
-                front = 0;
-            arr[++rear] = data;
-        }
+    public void enQueue(T data){
+        if(isFull()) throw new RuntimeException("Failed to push into a full stack");
+        if (front == -1)
+            front = 0;
+        arr[++rear] = data;
+        count++;
     }
 
-    public int deQueue(){
-        if(isEmpty()){
-            System.out.println("Dequeue exit");
-            System.exit(1);
-        }
+    @Override
+    public Integer size() {
+        return count;
+    }
 
-        int elem = arr[front];
+    public T deQueue(){
+        if(isEmpty()) throw new ArrayIndexOutOfBoundsException("Failed to deQueue! Queue is empty");
+        T elem = arr[front];
         if (front >= rear){
             rear = -1;
             front = -1;
         } else {
             front++;
         }
-
+        count--;
         return elem;
-
     }
 }

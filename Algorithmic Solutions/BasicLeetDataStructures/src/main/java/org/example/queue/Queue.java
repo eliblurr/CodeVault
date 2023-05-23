@@ -1,9 +1,10 @@
 package org.example.queue;
 
-public interface Queue{
-    public boolean isFull();
-    public boolean isEmpty();
-    public int peek();
-    public int deQueue();
-    public void enQueue(int i);
+public interface Queue<T>{
+    public Boolean isFull();
+    public Boolean isEmpty();
+    public T peek();
+    public T deQueue();
+    public void enQueue(T i);
+    public Integer size();
 }

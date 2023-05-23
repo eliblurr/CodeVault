@@ -44,9 +44,7 @@ public class StackTest {
     @ParameterizedTest
     @MethodSource("stacks")
     void verifyPushFailsWhenStackIsFull(Stack<Integer> stack) {
-        System.out.println(stack.size());
         for(int i=0; i < size; i++) stack.push(i);
-        System.out.println(stack.size());
         assertThrows(RuntimeException.class, ()->stack.push(67));
     }
 
@@ -97,8 +95,7 @@ public class StackTest {
     }
 
     static Stream<Stack<Integer>> stacks() {
-        return Stream.of(stackWithQueuePushOptimised);
-//        customStack, stackWithQueuePopOptimised, stackWithQueuePushOptimised
+        return Stream.of(customStack, stackWithQueuePopOptimised, stackWithQueuePushOptimised);
     }
 
 }

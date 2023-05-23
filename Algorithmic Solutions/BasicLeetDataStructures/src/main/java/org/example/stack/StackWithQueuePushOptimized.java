@@ -21,7 +21,7 @@ public class StackWithQueuePushOptimized<T> implements Stack<T> {
     public void push(T data){
         if(isFull()) throw new RuntimeException("Failed to push into a full stack");
         q1.add(data);
-        ++length;
+        length++;
     }
 
 //    lateral reflection -> if array just reverse array [::-1]
@@ -39,7 +39,7 @@ public class StackWithQueuePushOptimized<T> implements Stack<T> {
 
     @Override
     public Integer size() {
-        return 0;
+        return length;
     }
 
     public T peek(){
@@ -58,7 +58,7 @@ public class StackWithQueuePushOptimized<T> implements Stack<T> {
     }
 
     public Boolean isFull(){
-        return length==size;
+        return this.size()==this.size;
     }
 
     public void display(){

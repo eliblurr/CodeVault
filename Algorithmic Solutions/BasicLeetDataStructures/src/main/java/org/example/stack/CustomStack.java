@@ -43,10 +43,7 @@ public class CustomStack<T> implements Stack<T> {
     }
 
     public T peek(){
-        if(isEmpty()){
-            System.out.println("failed stack is empty");
-            System.exit(1);
-        }
+        if(isEmpty()) throw new ArrayIndexOutOfBoundsException("Failed to peek! Stack is empty");
         return arr[top];
     }
 
