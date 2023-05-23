@@ -5,17 +5,18 @@ import java.util.Queue;
 
 // push->O(n)
 // pop->O(1)
-public class StackWithQueuePopOptimized implements Stack {
+public class StackWithQueuePopOptimized<T> implements Stack<T> {
 
-    Queue<Integer> q1 = new LinkedList<Integer>();
-    Queue<Integer> q2 = new LinkedList<Integer>();
+    Queue<T> q1 = new LinkedList<T>();
+    Queue<T> q2 = new LinkedList<T>();
     private int size;
 
     public StackWithQueuePopOptimized(int size){
         this.size = size;
     }
 
-    public void push(int data){
+    public void push(T data){
+        if(isFull()) throw new RuntimeException("Failed to push into a full stack");
         while (q1.size()>0){
             q2.add(q1.remove());
         }
@@ -25,31 +26,28 @@ public class StackWithQueuePopOptimized implements Stack {
         }
     }
 
-    public int pop(){
+    public T pop(){
+        if(isEmpty()) throw new ArrayIndexOutOfBoundsException("Failed to pop! Stack is empty");
         return q1.remove();
     }
 
     @Override
-    public int size() {
-        return 0;
+    public Integer size() {
+        return q1.size();
     }
 
     @Override
-    public boolean isFull() {
-        return false;
+    public Boolean isFull() {
+        return q1.size()==this.size;
     }
 
     @Override
-    public boolean isEmpty() {
-        return false;
+    public Boolean isEmpty() {
+        return q1.isEmpty();
     }
 
     public void display(){
         System.out.print(q1.toString());
     }
-
-    // peek
-    // isEmpty
-    // isFull
 
 }

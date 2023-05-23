@@ -13,7 +13,7 @@ public class Main {
         Long start;
 
         System.out.println("Stack with Queue Pop Optimised\n-------------------------------");
-        Stack stackWithQueuePopOptimized = new StackWithQueuePopOptimized(12);
+        Stack<Integer> stackWithQueuePopOptimized = new StackWithQueuePopOptimized<Integer>(12);
 
         for (int i = 1; i < 5; i++){
             start = System.currentTimeMillis();
@@ -29,7 +29,7 @@ public class Main {
         }
 
         System.out.println("\nStack with Queue Push Optimised\n--------------------------------");
-        Stack stackWithQueuePushOptimized = new StackWithQueuePushOptimized(12);
+        Stack<Integer> stackWithQueuePushOptimized = new StackWithQueuePushOptimized<Integer>(12);
 
         for (int i = 1; i < 6; i++){
             start = System.currentTimeMillis();

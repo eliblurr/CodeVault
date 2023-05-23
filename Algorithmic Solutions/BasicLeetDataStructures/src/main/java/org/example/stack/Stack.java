@@ -1,14 +1,10 @@
 package org.example.stack;
 
-public interface Stack {
-
-    public void push(int i);
-    public int pop();
-
-    public int size();
-    public boolean isFull();
-    public boolean isEmpty();
+public interface Stack<T> {
+    public void push(T i);
+    public T pop();
+    public Integer size();
+    public Boolean isFull();
+    public Boolean isEmpty();
     public void display();
-
-
 }

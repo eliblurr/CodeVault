@@ -1,26 +1,29 @@
 package org.example.stack;
 
-public class CustomStack implements Stack {
+import java.lang.reflect.Array;
+import java.util.Arrays;
 
-    private int arr[];
-    private int top;
-    private int size;
+public class CustomStack<T> implements Stack<T> {
+
+    private T arr[];
+    private Integer top;
+    private Integer size;
 
     public CustomStack(int size){
-        arr = new int[size];
+        this.arr = (T[]) new Object[size];
         this.size = size;
         top = -1;
     }
 
-    public int size(){
+    public Integer size(){
         return top+1;
     }
 
-    public boolean isFull(){
+    public Boolean isFull(){
         return top == size-1;
     }
 
-    public boolean isEmpty(){
+    public Boolean isEmpty(){
         return top == -1;
     }
 
@@ -29,19 +32,17 @@ public class CustomStack implements Stack {
         System.out.print(arr.toString());
     }
 
-    public void push(int data){
-        if(isFull()){
-            System.out.println("failed stack is full");
-            System.exit(1);
-        }
+    public void push(T data){
+        if(isFull()) throw new RuntimeException("Failed to push into a full stack");
         arr[++top] = data;
     }
 
-    public int pop(){
+    public T pop(){
+        if(isEmpty()) throw new ArrayIndexOutOfBoundsException("Failed to pop! Stack is empty");
         return arr[top--];
     }
 
-    public int peek(){
+    public T peek(){
         if(isEmpty()){
             System.out.println("failed stack is empty");
             System.exit(1);

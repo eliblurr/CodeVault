@@ -5,68 +5,60 @@ import java.util.Queue;
 
 // push->O(1)
 // pop->O(n)
-public class StackWithQueuePushOptimized implements Stack {
+public class StackWithQueuePushOptimized<T> implements Stack<T> {
 
-    private Queue<Integer> q1; // primary queue
-    private Queue<Integer> q2; // secondary/temp queue
+    private Queue<T> q1; // primary queue
+    private Queue<T> q2; // secondary/temp queue
     private int length = 0;
     private int size;
 
     public StackWithQueuePushOptimized(Integer size){
-        q1 =  new LinkedList<Integer>();
-        q2 =  new LinkedList<Integer>();
+        q1 =  new LinkedList<T>();
+        q2 =  new LinkedList<T>();
         this.size = size;
     }
 
-    public void push(int data){
-//        check if isFull here
+    public void push(T data){
+        if(isFull()) throw new RuntimeException("Failed to push into a full stack");
         q1.add(data);
-        length++;
+        ++length;
     }
 
 //    lateral reflection -> if array just reverse array [::-1]
-    public int pop(){
+    public T pop(){
+        if(isEmpty()) throw new ArrayIndexOutOfBoundsException("Failed to pop! Stack is empty");
         while (q1.size()>0){
             q2.add(q1.remove());
         }
         while (q2.size()!=1){
             q1.add(q2.remove());
         }
+        length--;
         return q2.remove();
-//        int data = q1.remove();
-//        for (int i=0; i<length-1; ++i){ // leave only one element
-//            q2.add(q1.poll());
-//        }
-//        int poppedElement = q1.poll();
-//        length--;
-//        for (int i=0; i<length; ++i){
-//            q1.add(q2.poll());
-//        }
-//        return poppedElement;
     }
 
     @Override
-    public int size() {
+    public Integer size() {
         return 0;
     }
 
-    public int peek(){
+    public T peek(){
         for (int i=0; i<length-1; ++i){ // leave only one element
             q2.add(q1.poll());
         }
-        int top = q1.poll();
+        T top = q1.poll();
         for (int i=0;i<length; i++){
             q1.add(q2.poll());
         }
         return top;
     }
 
-    public boolean isEmpty(){
+    public Boolean isEmpty(){
         return length==0;
     }
 
-    public boolean isFull(){
-        return q1.size() == size;
+    public Boolean isFull(){
+        return length==size;
     }
 
     public void display(){
