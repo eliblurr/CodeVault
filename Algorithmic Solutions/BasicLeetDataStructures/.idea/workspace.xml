@@ -9,6 +9,7 @@
       <change afterPath="$PROJECT_DIR$/src/test/java/queue/QueueTest.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/test/java/stack/StackTest.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/test/java/tree/TreeTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Singleton/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
